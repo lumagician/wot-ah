@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="header">
+        <h1 className="title-text">Wot-Ah</h1>
+        <HeaderButton text="Home"/>
+        <HeaderButton text="About"/>
+        <HeaderButton text="Support"/>
+      </div>
+      <div className="content">
+
+        <div className="map-dummy">
+        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+  <TileLayer
+    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  />
+  <Marker position={[51.505, -0.09]}>
+    <Popup>
+      A pretty CSS3 popup. <br /> Easily customizable.
+    </Popup>
+  </Marker>
+</MapContainer>
+        </div>
+
+      </div>
+      <div className="footer">
+        <HeaderButton text="made by lumagician"/>
+      </div>
+    </div>
+  );
+}
+
+function HeaderButton(props) {
+  return (
+    <div className="header-button">
+      <p>{props.text}</p>
     </div>
   );
 }
