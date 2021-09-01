@@ -29,6 +29,10 @@ html, body, .root {
     padding: 20px;
 }
 
+.menu-button:hover{
+    background-color: #0a4ba0;
+}
+
 .spacer {
     flex-grow: 1;
 }
@@ -39,14 +43,9 @@ html, body, .root {
     padding: 0px;
 }
 
-.map-container {
-    position: relative;
-}
-
-#map {
-    position: relative;
+#issMap {
     width: 100%;
-    height: inherit;
+    height: 100%;
 }
 
 .footer {
