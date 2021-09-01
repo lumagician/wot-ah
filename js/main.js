@@ -30,12 +30,13 @@ $(document).ready(function() {
 
 function getFountains(map) {
   $.getJSON("/public/fountains.geojson", function(data) {
-    console.log(data.features[0].geometry.coordinates[0])
-    console.log(data.features[0].geometry.coordinates[1])
 
-    lat = data.features[0].geometry.coordinates[0];
-    lon = data.features[0].geometry.coordinates[1];
+    $.each(data.features.slice(0,100), function(i, item) {
 
-    var marker = L.marker([lon, lat]).addTo(map);
+      lat = data.features[i].geometry.coordinates[0];
+      lon = data.features[i].geometry.coordinates[1];
+
+      var marker = L.marker([lon, lat]).addTo(map);
+    })
   })
 }
