@@ -9,6 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""
+    ></script>
+    <style>
+        #issMap {
+          height: 480px;
+        }
+      </style>
     <title>Wot-Ah</title>
 </head>
 <body>
@@ -24,11 +40,11 @@
             <div class="menu-button font-light">
                 <p>contribute</p>
             </div>
-
-            
         </div>
         <div class="content">
-
+            <div class="map-container">
+                <div id="issMap"></div>
+            </div>
         </div>
         <div class="footer">
             <div class="footer-item">
@@ -37,5 +53,6 @@
 
         </div>
     </div>
+    <script src="js/map.js"></script>
 </body>
 </html>

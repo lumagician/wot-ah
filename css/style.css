@@ -6,6 +6,11 @@ html, body, .root {
     font-family: 'Roboto Mono', monospace;
 }
 
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
 .header {
     width: 100%;
     display: flex;
@@ -30,6 +35,18 @@ html, body, .root {
 
 .content {
     height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.map-container {
+    position: relative;
+}
+
+#map {
+    position: relative;
+    width: 100%;
+    height: inherit;
 }
 
 .footer {
