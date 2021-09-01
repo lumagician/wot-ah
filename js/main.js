@@ -15,9 +15,8 @@ $(document).ready(function() {
   $("#issMap").height(content_height);
 
   // Making a map and tiles
-  const map = L.map('issMap').setView([46.807, 8.253], 8);
-  const attribution =
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+  const map = L.map('issMap', {preferCanvas: true}).setView([46.807, 8.253], 8);
+  const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
   const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   const tiles = L.tileLayer(tileUrl, { attribution });
@@ -31,12 +30,14 @@ $(document).ready(function() {
 function getFountains(map) {
   $.getJSON("/public/fountains.geojson", function(data) {
 
-    $.each(data.features.slice(0,100), function(i, item) {
+    $.each(data.features, function(i, item) {
 
       lat = data.features[i].geometry.coordinates[0];
       lon = data.features[i].geometry.coordinates[1];
 
-      var marker = L.marker([lon, lat]).addTo(map);
+      var marker = L.circleMarker([lon, lat]).addTo(map);
+
+      console.log(i);
     })
   })
 }
