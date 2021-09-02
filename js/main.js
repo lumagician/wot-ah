@@ -37,7 +37,6 @@ function getFountains(map) {
 
       var marker = L.circleMarker([lon, lat]).addTo(map);
 
-      console.log(i);
     })
   })
 }
