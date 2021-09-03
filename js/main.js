@@ -28,7 +28,7 @@ $(document).ready(function() {
 })
 
 function getFountains(map) {
-  $.getJSON("/public/fountains.geojson", function(data) {
+  $.getJSON("https://lumagician.github.io/wot-ah/public/fountains.geojson", function(data) {
 
     $.each(data.features, function(i, item) {
 
