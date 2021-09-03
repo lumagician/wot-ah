@@ -13,7 +13,7 @@ jobs:
           rm -r .github
           rm .gitignore
           rm jsconfig.json
-          rm README-md
+          rm README.md
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
